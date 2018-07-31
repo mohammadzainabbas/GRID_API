@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2018 11:40:08 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gr.qrapi.core.model.Address" table="address">
+    
+    
+<!--    <id name="Id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="foreign">
+            	 <param name="property">contact</param> 
+            </generator>
+        </id> -->
+        
+        <id column="Id" name="Id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+<!--         <property name="contactId" type="java.lang.Integer">
+            <column name="Contact_Id" />
+        </property> -->
+        <property name="streetAddress" type="java.lang.String">
+            <column name="Street_Address" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="City" />
+        </property>
+        <property name="province" type="java.lang.String">
+            <column name="Province" />
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="Country" />
+        </property>
+        <!-- <one-to-one name="contactId" class="com.gr.qrapi.core.model.Contact" constrained="true"></one-to-one> -->
+    </class>
+</hibernate-mapping>
