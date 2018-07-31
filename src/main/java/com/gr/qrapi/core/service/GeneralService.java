@@ -6,7 +6,9 @@ import javax.ejb.Stateless;
 
 import com.gr.common.service.ServiceManager;
 import com.gr.qrapi.core.dao.AccountDaoHibernateImpl;
+import com.gr.qrapi.core.dao.ContactDaoHibernateImpl;
 import com.gr.qrapi.core.model.Account;
+import com.gr.qrapi.core.model.Contact;
 
 /**
  * @author ufarooq
@@ -23,4 +25,10 @@ public class GeneralService implements GeneralServiceLocal {
 	public List<Account> getAllAccounts() {
 		return AccountDaoHibernateImpl.getDao().getAllAccounts();
 	}
+	
+	@Override
+		public List<Contact> getAllContacts() {
+		return ContactDaoHibernateImpl.getDao().getAllContacts();
+	}
+	
 }

@@ -35,4 +35,58 @@ public class AccountDaoHibernateImpl extends AbstractHibernateDao<Account, Integ
 			throw new DaoException(aex);
 		}
 	}
+	
+	@Override
+	public void updateAccount(Account account) 
+	{
+		try 
+		{
+			Session session = getSession();
+			Account acc = (Account) session.get(Account.class, account.getId());
+			if (acc != null)
+			{
+				session.update(account);				
+			}
+			closeSession(session);
+		} 
+		catch (RuntimeException e) 
+		{
+			throw new DaoException(e);
+		}
+	}
+	
+	@Override
+	public void addAccount(Account account) {
+		try 
+		{
+			Session session = getSession();
+			session.save(account);
+			closeSession(session);
+		} 
+		catch (RuntimeException e) 
+		{
+			throw new DaoException(e);
+		}
+	}
+	
+	@Override
+		public void deleteAccount(int accountId) {
+		
+		try 
+		{
+			Session session = getSession();
+			Account acc = (Account) session.get(Account.class, accountId);
+			if (acc != null) 
+			{
+				session.delete(acc);
+			}
+			closeSession(session);
+		}
+		catch (RuntimeException e) 
+		{
+			throw new DaoException(e);
+		}
+		
+		}
+				
 }

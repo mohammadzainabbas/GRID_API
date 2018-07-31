@@ -3,11 +3,17 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.gr.qrapi.core.model.Account" table="Account">
+	<class name="com.gr.qrapi.core.model.Account" table="account">
 		<id column="Id" name="id" type="java.lang.Integer">
 			<generator class="native" />
 		</id>
 
 		<property column="Name" name="name" type="java.lang.String" />
+		<property column="Email" name="email" type="java.lang.String" />
+		<property column="City" name="city" type="java.lang.String" />
+		<bag name="contacts" cascade="all">
+			<key column="Contact_Id" />
+			<one-to-many class="com.gr.qrapi.core.model.Contact" />
+		</bag>
 	</class>
 </hibernate-mapping>

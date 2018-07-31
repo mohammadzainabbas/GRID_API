@@ -11,5 +11,7 @@ import com.gr.qrapi.core.model.Account;
 public interface AccountDao extends GenericDao<Account, Integer> {
 
 	List<Account> getAllAccounts();
-
+	void updateAccount(Account account);
+	void addAccount(Account account);
+	void deleteAccount(int accountId);
 }
