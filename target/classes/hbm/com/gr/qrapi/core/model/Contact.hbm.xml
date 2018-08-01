@@ -8,7 +8,7 @@
 			<generator class="native" />
 		</id>
 		
-		<!-- <property name="addressId" type="java.lang.Integer">
+<!-- 		<property name="addressId" type="java.lang.Integer">
 			<column name="Address_Id" />
 			<generator class="foreign">
 				<param name="property">address</param>
@@ -18,6 +18,9 @@
 		<!-- For one-to-many relation -->
 		<property column="Account_Id" name="accountId" type="java.lang.Integer" />
 		
+		<!-- Try -->
+		<!-- <property column="Address_Id" name="addressId" type="java.lang.Integer" /> -->
+		
 		<property column="First_Name" name="firstName" type="java.lang.String" />
 		<property column="Last_Name" name="lastName" type="java.lang.String" />
 		<property column="Email" name="email" type="java.lang.String" />
@@ -25,10 +28,12 @@
 		<property column="Phone_Number" name="phoneNumber" type="java.lang.Integer" />
 		<property column="Contact_Status" name="status" type="java.lang.String" />
 		
-		<many-to-one  name="address" class="com.gr.qrapi.core.model.Address"
+		<many-to-one  name="address" column="Address_Id" fetch="join" class="com.gr.qrapi.core.model.Address"
 		cascade="all">
-		<column name="Address_Id" />
 		</many-to-one>		
 		
+<!-- 		<one-to-one  name="address" class="com.gr.qrapi.core.model.Address" constrained="true"/>
+ -->		
+				
 	</class>
 </hibernate-mapping>

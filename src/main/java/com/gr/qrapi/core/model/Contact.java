@@ -110,13 +110,13 @@ public class Contact implements Serializable{
 		this.address = address;
 	}
 
-	/*public Integer getAddressId() {
+/*	public Integer getAddressId() {
 		return addressId;
 	}
 
 	public void setAddressId(Integer addressId) {
 		this.addressId = addressId;
-	}
-*/
+	}*/
+
 
 }

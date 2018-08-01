@@ -31,6 +31,9 @@
         <property name="country" type="java.lang.String">
             <column name="Country" />
         </property>
+        
+        <!-- <one-to-one name="contact" class="com.gr.qrapi.core.model.Contact" cascade="save-update"></one-to-one>
+         -->
         <!-- <one-to-one name="contactId" class="com.gr.qrapi.core.model.Contact" constrained="true"></one-to-one> -->
     </class>
 </hibernate-mapping>
