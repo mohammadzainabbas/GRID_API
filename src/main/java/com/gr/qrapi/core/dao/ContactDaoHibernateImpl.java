@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import com.gr.common.dao.AbstractHibernateDao;
 import com.gr.common.dao.DaoManager;
 import com.gr.common.exception.DaoException;
-import com.gr.qrapi.core.model.Address;
+
 import com.gr.qrapi.core.model.Contact;
 
 /**
@@ -32,9 +32,8 @@ public class ContactDaoHibernateImpl extends AbstractHibernateDao<Contact, Integ
 			
 			List<Contact> contacts = (List<Contact>) criteria.list();
 			for (Contact contact : contacts) {
-		/*		Ad
-				contact.setAddress();
-		*/		Hibernate.initialize(contact.getAddress());
+				Hibernate.initialize(contact.getAddress());
+				Hibernate.initialize(contact.getAccount());
 			}
 			
 			return contacts;

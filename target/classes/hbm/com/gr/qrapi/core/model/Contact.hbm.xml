@@ -16,7 +16,16 @@
 		</property> -->
 		
 		<!-- For one-to-many relation -->
-		<property column="Account_Id" name="accountId" type="java.lang.Integer" />
+		<!-- <property column="Account_Id" name="accountId" type="java.lang.Integer" />
+		 -->
+<!-- 		<many-to-one  name="account" column="Account_Id" fetch="join" class="com.gr.qrapi.core.model.Account"
+		not-null="true">
+		</many-to-one>	
+		 -->
+		<many-to-one  name="account" column="Account_Id" fetch="join" class="com.gr.qrapi.core.model.Account"
+		cascade="all">
+		</many-to-one>	
+
 		
 		<!-- Try -->
 		<!-- <property column="Address_Id" name="addressId" type="java.lang.Integer" /> -->

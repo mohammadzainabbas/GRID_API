@@ -12,13 +12,23 @@ public class Contact implements Serializable{
 	public static final String INACTIVE = "inactive";
 	
 	private Integer Id;
-	private Integer accountId;
+/*	private Integer accountId;*/
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String gender;
 	private Integer phoneNumber;
 	private String status;
+
+	private Account account;
+	
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 
 	//Contact has an address
 	/*private Integer addressId;*/
@@ -46,13 +56,13 @@ public class Contact implements Serializable{
 		Id = id;
 	}
 
-	public Integer getAccountId() {
+/*	public Integer getAccountId() {
 		return accountId;
 	}
 
 	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
-	}
+	}*/
 
 	public String getFirstName() {
 		return firstName;

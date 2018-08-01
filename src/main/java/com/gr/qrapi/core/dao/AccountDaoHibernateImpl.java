@@ -29,6 +29,11 @@ public class AccountDaoHibernateImpl extends AbstractHibernateDao<Account, Integ
 			criteria.setMaxResults(100);
 
 			List<Account> accounts = (List<Account>) criteria.list();
+			
+/*			for(Account account: accounts)
+			{
+				Hibernate.initialize(account.getContacts());
+			}*/
 
 			return accounts;
 		} catch (Exception aex) {

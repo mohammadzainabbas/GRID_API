@@ -1,7 +1,7 @@
 package com.gr.qrapi.core.model;
 
 import java.io.Serializable;
-import java.util.List;
+
 
 /**
  * @author ufarooq
@@ -16,8 +16,10 @@ public class Account implements Serializable {
 	private String city;
 	
 	//Account have many contacts
-	private List<Contact> contacts;
-
+/*	private List<Contact> contacts;
+*/
+	/*private Set<Contact> contacts = new HashSet<Contact>(0);
+*/	
 	public String getEmail() {
 		return email;
 	}
@@ -53,12 +55,20 @@ public class Account implements Serializable {
 		this.name = name;
 	}
 
-	public List<Contact> getContacts() {
+/*	public Set<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(Set<Contact> contacts) {
+		this.contacts = contacts;
+	}
+*/
+/*	public List<Contact> getContacts() {
 		return contacts;
 	}
 
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
-
+*/
 }

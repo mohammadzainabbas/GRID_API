@@ -11,9 +11,20 @@
 		<property column="Name" name="name" type="java.lang.String" />
 		<property column="Email" name="email" type="java.lang.String" />
 		<property column="City" name="city" type="java.lang.String" />
-		<bag name="contacts" cascade="all">
+
+<!--         <set name="contacts" table="contact" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id" not-null="true" />
+            </key>
+            <one-to-many class="com.gr.qrapi.core.model.Contact" />
+        </set> -->
+<!-- 		<many-to-one name="contacts" cascade="all" fetch="join" class="com.gr.qrapi.core.model.Contact"></many-to-one>
+ -->		
+<!-- 		<bag name="contacts" cascade="all">
 			<key column="Contact_Id" />
 			<one-to-many class="com.gr.qrapi.core.model.Contact" />
 		</bag>
-	</class>
+ -->
+ 	</class>
 </hibernate-mapping>
